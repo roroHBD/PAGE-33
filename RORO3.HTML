@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+  .Desktop1 {
+    width: 1440px;
+    height: 1023px;
+    position: relative;
+    background: white;
+  }
+  .Big {
+    width: 1292px;
+    height: 887px;
+    left: 74px;
+    top: 68px;
+    position: absolute;
+    background: #C90505;
+    border-radius: 12px;
+  }
+  .Small {
+    width: 828px;
+    height: 698px;
+    left: 306px;
+    top: 163px;
+    position: absolute;
+    background: #FFFCFC;
+    border-radius: 12px;
+  }
+  .Frame1 {
+    padding: 10px;
+    left: 306px;
+    top: 150px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+  }
+  .countdown {
+    font-size: 36px;
+    color: #ffffff;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Ensures the countdown is above everything else */
+  }
+  .countdown-text {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 85%;
+    left: -2%;
+    transform: translateX(-50%);
+    margin-left: 300px;
+    z-index: 9999; /* Ensures the text is above everything else */
+  }
+</style>
+</head>
+<body>
+
+<div class="Desktop1">
+  <div class="Big"></div>
+  <div class="Small"></div>
+  <div class="Frame1">
+    <div class="HelloRoroIWantToSpeakWithYouFromMyHeartIUnderstandThatYouDidNotWantToTellMeMoreAboutYourPastAndIAppreciateYouTellingMeTheTruthHoweverICanTStandTheFactThatIMTalkingToAGirlWhoUsedToBeAFuckingHoeIDoBelieveThatYouHaveChangedButYouMadeTheSameMistakeAndRefusedToTellMeTheTruthForAWholeYearDidYouReallyChangeYaraBecauseAtTheEndOfTheDayItSeemsLikeYouKeepRepeatingYourMistakes">
+      <span style="color: #C90505; font-size: 36px; font-family: Inter; font-weight: 400; word-wrap: break-word">Hello Roro,<br/></span>
+      <span style="color: black; font-size: 36px; font-family: Inter; font-weight: 400; word-wrap: break-word">I want to speak with you from my heart.<br/>I understand that you did not want to tell me <br/>more about your past, <br/>and I appreciate you telling me the truth.<br/>However, I can't stand the fact that I'm talking<br/>to a girl who used to be a fucking hoe.<br/>I do believe that you have<br/>changed, but you made the same mistake<br/>and refused to tell me the truth for a whole<br/>year. Did you really change,<br/>Yara? Because at the end of the day,<br/>it seems like you keep repeating your mistakes.</span>
+    </div>
+  </div>
+  <div class="IForgiveYou" style="left: 900px; top: 808px; position: absolute; color: #C90505; font-size: 36px; font-family: Inter; font-weight: 400; word-wrap: break-word">i forgive you.</div>
+  <div class="AndIKeepMakingTheSameMistakeByForgivingYouOverAndOverAgain" style="width: 838px; left: 306px; top: 742px; position: absolute; color: black; font-size: 36px; font-family: Inter; font-weight: 400; word-wrap: break-word">And I keep making the same mistake by forgiving<br/>you over and over again.</div>
+  <div class="countdown" id="countdown"></div>
+  <div class="countdown-text">days until our hangout</div>
+</div>
+
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Jan 4, 2025 00:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="countdown"
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
